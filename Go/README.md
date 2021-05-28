@@ -55,7 +55,7 @@ mySlice2 := mySlice1[0:2]               // slicing a slice
                                         // [1 2]
 ```
 
-Working with maps
+Working with maps.
 ```golang
 func Hellos(names []string) (map[string]string, error) {
     // A map to associate names with messages.
