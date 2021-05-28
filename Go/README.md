@@ -74,3 +74,47 @@ func Hellos(names []string) (map[string]string, error) {
     return messages, nil
 }
 ```
+
+Working with testing.
+```golang
+import "testing"
+
+func TestHelloName(t *testing.T) {
+    name := "Gladys"
+    want := regexp.MustCompile(`\b`+name+`\b`)
+    msg, err := Hello("Gladys")
+    if !want.MatchString(msg) || err != nil {
+        t.Fatalf(`Hello("Gladys") = %q, %v, want match for %#q, nil`, msg, err, want)
+    }
+}
+```
+
+Tests start with Test, `go test` will run all files that end with _test.go. Optionally use -v for a verbose test.
+
+## Pointers
+
+Go has pointers. A pointer holds the memory address of a value.
+
+The type *T is a pointer to a T value. Its zero value is nil.
+
+```golang
+var p *int
+```
+
+The & operator generates a pointer to its operand.
+
+```golang
+i := 42
+p = &i
+```
+
+The * operator denotes the pointer's underlying value.
+
+```golang
+fmt.Println(*p) // read i through the pointer p
+*p = 21         // set i through the pointer p
+```
+
+This is known as "dereferencing" or "indirecting".
+
+Unlike C, Go has no pointer arithmetic. 
