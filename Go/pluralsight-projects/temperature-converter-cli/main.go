@@ -7,21 +7,20 @@ import (
 	"strings"
 )
 
-var originUnit string
-var originValue float64
+var (
+	originUnit         string
+	originValue        float64
+	shouldConvertAgain string
+	err                error
 
-var shouldConvertAgain string
-
-var err error
-
-var errInvalidArguments = errors.New("Invalid arguments")
-var errReadingInput = errors.New("Error reading input")
+	errInvalidArguments = errors.New("Invalid arguments")
+	errReadingInput     = errors.New("Error reading input")
+)
 
 func main() {
 	if len(os.Args) != 2 {
 		printError(errInvalidArguments)
 	}
-
 	originUnit = strings.ToUpper(os.Args[1])
 
 	for {
