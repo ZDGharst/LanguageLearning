@@ -10,13 +10,37 @@ Each solution must be a single sql query statement. The data used to test your q
 
 Return the zoom_id, last_name and first_name, of all users with a last name of Stradling.   The results should be in zoom_id order ascending.
 
+Answer:
+
+```sql
+SELECT zoom_id, last_name, first_name FROM zoom_user
+  WHERE last_name = 'Stradling'
+  ORDER BY zoom_id ASC;
+```
+
 ## Query 2
 
 Return all meeting_id, meeting_name, and start date for all meetings that have the word mobile in the meeting name.  It should be returned by meeting_id ascending.
 
+Answer:
+
+```sql
+SELECT meeting_id, meeting_name, start_date FROM meeting
+  WHERE meeting_name LIKE '%mobile%'
+  ORDER BY meeting_id ASC;
+```
+
 ## Query 3
 
 Return the meeting_name, and last_name of the host for the meeting that has a passcode of 939904.
+
+Answer:
+
+```sql
+SELECT meeting_name, last_name FROM meeting
+  JOIN zoom_user ON meeting.host_id = zoom_user.zoom_id
+  WHERE passcode = 939904;
+```
 
 ## Query 4
 
