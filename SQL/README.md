@@ -100,15 +100,58 @@ GROUP BY meeting_id HAVING COUNT(*)>=2;
 
 Return the last name, email, meeting_name and ipv4address ordered by email of all people who have attended a meeting that was catagorized as a Conference and the ipv4address starts with 159.
 
+Answer:
+
+```sql
+SELECT last_name, email, meeting_name, ipv4address FROM zoom_user
+JOIN user_meeting ON zoom_id = zoom_user_id
+JOIN meeting ON meeting.meeting_id = user_meeting.meeting_id
+JOIN meeting_category ON meeting.meeting_id = meeting_category.meeting_id
+JOIN category ON meeting_category.category_id = category.category_id
+WHERE category_name = 'Conference' AND ipv4address LIKE '159.%' ORDER BY email;
+```
+
 ## Query 9
 
 Return the meeting_name, meeting_id and passcode for all meetings that have a null for the passcode.  Order the results by meeting_name descending. 
+
+Answer:
+
+```sql
+SELECT meeting_name, meeting_id, passcode FROM meeting
+WHERE passcode IS NULL
+ORDER BY meeting_name DESC;
+```
 
 ## Query 10
 
 Return the last_name, email, role for all users that either attended or hosted the meeting named ‘Ameliorated responsive encoding’ .  Order the results by Role desc then email ascending.
 
+Answer:
+
+```sql
+SELECT last_name, email, 'Attendee' AS role FROM zoom_user
+JOIN user_meeting ON zoom_id = zoom_user_id
+JOIN meeting ON user_meeting.meeting_id = meeting.meeting_id
+WHERE meeting_name = 'Ameliorated responsive encoding'
+
+UNION
+
+SELECT last_name, email, 'Host' AS role FROM zoom_user
+JOIN meeting ON zoom_id = host_id
+WHERE meeting_name = 'Ameliorated responsive encoding'
+
+ORDER BY role DESC, email ASC;
+```
+
 ## Query 11
 
 Return the first_name, last_name, and meeting for all users has an email address for endgadget.com.  The meeting should be any meeting they’ve hosted, if they’ve never hosted a meeting it should be null.
 
+Answer:
+
+```sql
+SELECT first_name, last_name, meeting_name FROM zoom_user
+LEFT JOIN meeting ON zoom_id = host_id
+WHERE email LIKE '%engadget.com';
+```
