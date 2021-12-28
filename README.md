@@ -1,6 +1,6 @@
 # Summary
 
-This is my collection of notes/tutorials/projects I have completed while learning various languages. This isn't a full collection of all the languages I've worked in, as some languages I've learned prior to starting this collection (C++, HTML, CSS, PHP, SQL)
+This is my collection of notes/tutorials/projects I have completed while learning various languages (note: language in this context may mean technology). This isn't a full collection of all the languages I've worked in, as some languages I've learned prior to starting this collection (C++, HTML, CSS, PHP, SQL)
 
 ## Languages Started
 
