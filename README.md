@@ -1,18 +1,39 @@
 # Summary
 
-This is my collection of notes/tutorials/projects I have completed while learning various languages (note: language in this context may mean technology). This isn't a full collection of all the languages I've worked in, as some languages I've learned prior to starting this collection (C++, HTML, CSS, PHP, SQL)
+This is my collection of notes/tutorials/projects I have completed while learning various technologies. This isn't a full collection of all the technologies I've worked in, as some I've learned prior to starting this collection.
 
-## Languages Started
+## Technologies I'm Learning in 2022
+
+- [ ] Remix (or some form of server side rendering)
+- [ ] Containers / Docker / K8s
+- [ ] Sequelize
+- [ ] More Go
+- [ ] More C#
+- [ ] Turborepo
+- [ ] Hardware
+
+## Technologies I've Learned in 2021
+
+- [x] TypeScript
+- [x] React
+- [x] Node
+- [x] REST API
+- [x] MongoDB
+- [x] Jest/Cypress
+- [x] Redux
+- [x] React router
+- [x] GraphQL
+- [x] React Native
+- [x] CI/CD
+- [x] Go
+- [x] TensorFlow
+- [x] Unity
+
+## Future
 
 - Go
-
-## Languages to Learn
-
-I would like to learn the following languages:
-
 - Scala
 - Python
 - Julia
-- TypeScript
 - C#
 - Rust
