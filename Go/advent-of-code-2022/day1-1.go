@@ -22,13 +22,13 @@ func main() {
 		items := strings.Split(elf, "\n")
 
 		for _, item := range items {
-            calories, _ := strconv.Atoi(item)
-            sum += calories
+			calories, _ := strconv.Atoi(item)
+			sum += calories
 		}
 
-        if sum > max {
-            max = sum
-        }
+		if sum > max {
+			max = sum
+		}
 	}
 
 	fmt.Println(max)

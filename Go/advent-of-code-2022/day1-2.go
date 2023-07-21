@@ -16,21 +16,21 @@ func main() {
 
 	data := string(fileContent)
 	elves := strings.Split(data, "\n\n")
-    sums := make([]int, len(elves))
+	sums := make([]int, len(elves))
 
 	for _, elf := range elves {
 		items := strings.Split(elf, "\n")
-        sum := 0
+		sum := 0
 
 		for _, item := range items {
-            calories, _ := strconv.Atoi(item)
-            sum += calories
+			calories, _ := strconv.Atoi(item)
+			sum += calories
 		}
 
-        sums = append(sums, sum)
+		sums = append(sums, sum)
 	}
 
-    sort.Sort(sort.Reverse(sort.IntSlice(sums)))
+	sort.Sort(sort.Reverse(sort.IntSlice(sums)))
 
 	fmt.Println(sums[0] + sums[1] + sums[2])
 }

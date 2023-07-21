@@ -16,7 +16,7 @@ func main() {
 	rounds := strings.Split(data, "\n")
 	points := 0
 
-    for i := 0; i < len(rounds) - 1; i++ { 
+	for i := 0; i < len(rounds)-1; i++ {
 		points += pointsForChoice(rounds[i])
 		points += pointsForOutcome(rounds[i])
 	}
